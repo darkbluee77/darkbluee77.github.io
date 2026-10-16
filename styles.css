@@ -25,3 +25,33 @@ html[data-theme="dark"] .research{color:#e9e6de}html[data-theme="dark"] .researc
 @media(min-width:761px){.about-grid .portrait-wrap{width:82%;justify-self:center}}
 .research .project-grid{width:min(100%,1220px);margin:0 auto;gap:1.1rem}.research .project-card img{aspect-ratio:16/7}.research .card-body{padding:1.4rem}.research .card-body h3{font-size:1.6rem;line-height:1.1}.research .card-body>p{font-size:.9rem;line-height:1.55}.research .card-links{margin-top:1rem;font-size:.72rem}@media(max-width:760px){.research .project-card img{aspect-ratio:16/8}.research .card-body{padding:1.25rem}.research .card-body h3{font-size:1.45rem}}
 .timeline .mentors{margin-top:.55rem;font-size:.82rem}.timeline .mentors span{margin-right:.65rem;color:var(--blue);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}.timeline .mentors a{text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--muted) 45%,transparent);text-underline-offset:3px}.timeline .mentors a:hover{color:var(--blue)}
+
+/* Selected work: a single, horizontally scrollable row. */
+.research .project-grid{
+  display:flex;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  overflow-y:hidden;
+  gap:1.1rem;
+  padding:0 .15rem 1.25rem;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:.15rem;
+  overscroll-behavior-inline:contain;
+  scrollbar-width:thin;
+  scrollbar-color:var(--blue) transparent;
+  cursor:grab;
+}
+.research .project-grid:active{cursor:grabbing}
+.research .project-grid:focus-visible{outline:2px solid var(--blue);outline-offset:6px}
+.research .project-grid::-webkit-scrollbar{height:6px}
+.research .project-grid::-webkit-scrollbar-track{background:transparent}
+.research .project-grid::-webkit-scrollbar-thumb{background:var(--blue);border-radius:10px}
+.research .project-card{
+  flex:0 0 clamp(320px,46vw,560px);
+  scroll-snap-align:start;
+}
+.research .edgewise-card img{object-position:center top}
+@media(max-width:760px){
+  .research .project-grid{padding-bottom:1rem}
+  .research .project-card{flex-basis:80vw}
+}
