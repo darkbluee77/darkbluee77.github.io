@@ -30,13 +30,15 @@ html[data-theme="dark"] .research{color:#e9e6de}html[data-theme="dark"] .researc
 .research .project-grid{
   display:flex;
   flex-wrap:nowrap;
-  overflow-x:auto;
+  width:100%;
+  overflow-x:scroll;
   overflow-y:hidden;
   gap:1.1rem;
   padding:0 .15rem 1.25rem;
   scroll-snap-type:x mandatory;
   scroll-padding-inline:.15rem;
   overscroll-behavior-inline:contain;
+  -webkit-overflow-scrolling:touch;
   scrollbar-width:thin;
   scrollbar-color:var(--blue) transparent;
   cursor:grab;
@@ -48,9 +50,10 @@ html[data-theme="dark"] .research{color:#e9e6de}html[data-theme="dark"] .researc
 .research .project-grid::-webkit-scrollbar-thumb{background:var(--blue);border-radius:10px}
 .research .project-card{
   flex:0 0 clamp(320px,46vw,560px);
+  min-width:0;
   scroll-snap-align:start;
 }
-.research .edgewise-card img{object-position:center top}
+.research .edgewise-card img{object-fit:cover;object-position:center top !important}
 @media(max-width:760px){
   .research .project-grid{padding-bottom:1rem}
   .research .project-card{flex-basis:80vw}
