@@ -58,3 +58,50 @@ html[data-theme="dark"] .research{color:#e9e6de}html[data-theme="dark"] .researc
   .research .project-grid{padding-bottom:1rem}
   .research .project-card{flex-basis:80vw}
 }
+
+/* Compact the rest of the page while keeping the About copy readable. */
+.news .section-heading h2,
+.research .section-heading h2,
+.publications .section-heading h2,
+.experience h2{font-size:clamp(2.15rem,3.7vw,3.7rem);margin-bottom:1.35rem}
+.news .section-label,
+.research .section-label,
+.publications .section-label,
+.experience .section-label{margin-bottom:3.2rem}
+.news-list article{padding:.82rem 0}
+.news-list article p{font-size:1.02rem;line-height:1.4}
+.research .section-heading{margin-bottom:2.6rem}
+.research .card-body{padding:1.15rem}
+.research .card-body h3{font-size:1.38rem}
+.research .card-body>p{font-size:.84rem;line-height:1.48}
+.research .card-links{margin-top:.8rem;font-size:.68rem}
+.publication-group{margin-top:4.4rem}
+.publication-group>header{grid-template-columns:58px 1fr;gap:1.25rem;margin-bottom:.8rem}
+.publication-group>header>span{font-size:2.8rem}
+.publication-group>header h3{font-size:clamp(1.8rem,3.2vw,3.2rem)}
+.pub-list article{padding:1.35rem 0}
+.pub-list h3{font-size:1.35rem;line-height:1.12}
+.pub-list p{font-size:.8rem}
+.pub-list article>a{font-size:1.25rem}
+.split{gap:7vw}
+.timeline article{padding:1rem 0}
+.timeline h3{font-size:1.35rem}
+.timeline p{font-size:.9rem}
+.recognition-columns{margin-top:5rem}
+.recognition-columns h2{margin-bottom:1.35rem}
+.awards-scroll article,.service-list article{padding:.8rem 0}
+.awards-scroll article p,.service-list article p{font-size:.9rem}
+@media(max-width:760px){
+  .news .section-label,
+  .research .section-label,
+  .publications .section-label,
+  .experience .section-label{margin-bottom:2.5rem}
+  .news-list article p{font-size:.96rem}
+  .publication-group{margin-top:3.2rem}
+  .publication-group>header{grid-template-columns:42px 1fr;gap:.7rem}
+  .publication-group>header>span{font-size:2.2rem}
+  .publication-group>header h3{font-size:2rem}
+  .pub-list h3{font-size:1.16rem}
+  .pub-list p{font-size:.76rem}
+  .timeline h3{font-size:1.2rem}
+}
