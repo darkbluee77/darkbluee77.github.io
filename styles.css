@@ -87,6 +87,9 @@ html[data-theme="dark"] .research{color:#e9e6de}html[data-theme="dark"] .researc
 .timeline article{padding:1rem 0}
 .timeline h3{font-size:1.35rem}
 .timeline p{font-size:.9rem}
+.timeline-item{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:1.25rem;align-items:center}
+.timeline-logo{width:64px;height:64px;display:grid;place-items:center;justify-self:end}
+.timeline-logo img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .recognition-columns{margin-top:5rem}
 .recognition-columns h2{margin-bottom:1.35rem}
 .awards-scroll article,.service-list article{padding:.8rem 0}
@@ -104,4 +107,6 @@ html[data-theme="dark"] .research{color:#e9e6de}html[data-theme="dark"] .researc
   .pub-list h3{font-size:1.16rem}
   .pub-list p{font-size:.76rem}
   .timeline h3{font-size:1.2rem}
+  .timeline-item{grid-template-columns:minmax(0,1fr) 58px;gap:.75rem}
+  .timeline-logo{width:52px;height:52px}
 }
