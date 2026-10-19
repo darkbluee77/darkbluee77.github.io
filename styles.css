@@ -173,14 +173,14 @@ html[data-theme="dark"] .experience-timeline::-webkit-scrollbar-thumb{background
 
 /* Tighter rhythm between the main page sections. */
 .section-pad{padding-top:3rem;padding-bottom:3rem}
-.about{padding-top:3.5rem}
+.about{padding-top:7rem}
 .section-heading{margin-bottom:1.35rem}
 .research{padding-bottom:2rem}
 .publications{padding-top:2rem}
 .publication-group{margin-top:2rem}
 @media(max-width:760px){
   .section-pad{padding-top:2.5rem;padding-bottom:2.5rem}
-  .about{padding-top:3rem}
+  .about{padding-top:5rem}
   .research{padding-bottom:1.75rem}
   .publications{padding-top:1.75rem}
 }
