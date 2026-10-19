@@ -110,3 +110,107 @@ html[data-theme="dark"] .research{color:#e9e6de}html[data-theme="dark"] .researc
   .timeline-item{grid-template-columns:minmax(0,1fr) 58px;gap:.75rem}
   .timeline-logo{width:52px;height:52px}
 }
+
+/* Combined horizontal education and internship timeline. */
+.experience-overview>h2{margin-bottom:2rem}
+.experience-timeline{position:relative;display:flex;gap:1rem;overflow-x:auto;overflow-y:hidden;padding:.15rem .15rem 1.5rem;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--blue) transparent;overscroll-behavior-inline:contain}
+.experience-timeline:focus-visible{outline:2px solid var(--blue);outline-offset:6px}
+.experience-timeline::-webkit-scrollbar{height:6px}
+.experience-timeline::-webkit-scrollbar-track{background:transparent}
+.experience-timeline::-webkit-scrollbar-thumb{background:var(--blue);border-radius:10px}
+.experience-timeline::before{content:"";position:absolute;z-index:0;left:2rem;right:2rem;top:2.15rem;border-top:1px solid var(--line)}
+.experience-node{position:relative;z-index:1;display:flex;flex:1 0 calc((100% - 3rem)/4);min-width:220px;flex-direction:column;align-items:center;scroll-snap-align:start}
+.experience-node>time{min-height:1.25rem;color:var(--blue);text-align:center;white-space:nowrap}
+.timeline-marker{width:14px;height:14px;margin:.55rem 0 1rem;border:3px solid var(--paper);border-radius:50%;background:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.experience-node-card{width:100%;min-height:190px;border-top:1px solid var(--line);padding:1rem .8rem 0;text-align:center}
+.experience-node-card .timeline-logo{margin:0 auto .8rem;width:58px;height:58px}
+.experience-node-card h3{font:600 1.18rem/1.12 Halant,serif;margin:0 0 .45rem}
+.experience-node-card p{margin:0;color:var(--muted);font-size:.82rem;line-height:1.45}
+.experience-node-card .mentors{margin-top:.55rem;font-size:.74rem}
+.experience-node-card .mentors span{display:block;margin:0 0 .15rem;color:var(--blue);font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:760px){
+  .experience-overview>h2{margin-bottom:1.4rem}
+  .experience-timeline{gap:.8rem;padding-bottom:1rem}
+  .experience-timeline::before{left:1.5rem;right:1.5rem}
+  .experience-node{flex-basis:76vw;min-width:245px}
+  .experience-node-card{min-height:180px}
+}
+
+/* Light mode uses the same paper palette as the rest of the page. */
+.research{background:var(--white);color:var(--ink)}
+.research .section-heading p{color:var(--muted)}
+.research .project-card{background:#f4f2eb;border-color:var(--line);color:var(--ink)}
+.research .tag{color:var(--blue)}
+.research .card-body>p{color:var(--muted)}
+.research .project-grid{scrollbar-color:#7f91c2 #e6e3da}
+.research .project-grid::-webkit-scrollbar-track{background:#e6e3da}
+.research .project-grid::-webkit-scrollbar-thumb{background:#7f91c2}
+html[data-theme="dark"] .research{background:#11151b;color:#e9e6de}
+html[data-theme="dark"] .research .project-card{background:#202630;border-color:#3b414b;color:#e9e6de}
+html[data-theme="dark"] .research .project-grid{scrollbar-color:var(--blue) #202630}
+html[data-theme="dark"] .research .project-grid::-webkit-scrollbar-track{background:#202630}
+html[data-theme="dark"] .research .project-grid::-webkit-scrollbar-thumb{background:var(--blue)}
+
+/* One centered line with alternating experience cards. */
+.experience-timeline{min-height:360px;padding:.15rem .15rem 1.5rem;align-items:stretch}
+.experience-timeline::before{top:50%}
+.experience-node{display:grid;height:350px;grid-template-rows:1fr 30px 1fr;align-items:center}
+.experience-node>time{grid-row:1;align-self:end;padding-bottom:.45rem}
+.timeline-marker{grid-row:2;margin:0;justify-self:center}
+.experience-node-card{grid-row:3;min-height:170px;border-top:0;padding:.8rem .8rem 0}
+.experience-node:nth-child(even)>time{grid-row:3;align-self:start;padding:.45rem 0 0}
+.experience-node:nth-child(even)>.experience-node-card{grid-row:1;align-self:end;padding:0 0 .8rem}
+.experience-timeline{scrollbar-color:#7f91c2 #e6e3da}
+.experience-timeline::-webkit-scrollbar-track{background:#e6e3da}
+.experience-timeline::-webkit-scrollbar-thumb{background:#7f91c2}
+html[data-theme="dark"] .experience-timeline{scrollbar-color:var(--blue) #20252d}
+html[data-theme="dark"] .experience-timeline::-webkit-scrollbar-track{background:#20252d}
+html[data-theme="dark"] .experience-timeline::-webkit-scrollbar-thumb{background:var(--blue)}
+@media(max-width:760px){
+  .experience-timeline{min-height:350px}
+  .experience-node{height:340px}
+}
+
+/* Tighter rhythm between the main page sections. */
+.section-pad{padding-top:3rem;padding-bottom:3rem}
+.about{padding-top:3.5rem}
+.section-heading{margin-bottom:1.35rem}
+.research{padding-bottom:2rem}
+.publications{padding-top:2rem}
+.publication-group{margin-top:2rem}
+@media(max-width:760px){
+  .section-pad{padding-top:2.5rem;padding-bottom:2.5rem}
+  .about{padding-top:3rem}
+  .research{padding-bottom:1.75rem}
+  .publications{padding-top:1.75rem}
+}
+
+/* Keep the horizontal rule exactly on the marker centers. */
+.experience-timeline{height:350px;min-height:0;padding:0}
+.experience-timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;align-content:stretch}
+.experience-timeline::before{top:175px}
+.experience-node{height:350px;min-width:0;width:auto;align-self:stretch}
+.experience-node .timeline-marker{position:absolute;z-index:2;top:175px;left:50%;margin:0;transform:translate(-50%,-50%)}
+@media(max-width:760px){
+  .experience-timeline{height:340px;min-height:0;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:76vw}
+  .experience-timeline::before{top:170px}
+  .experience-node{height:340px}
+  .experience-node .timeline-marker{top:170px}
+}
+
+/* Restore the v12 experience timeline layout. */
+.experience-timeline{display:flex;height:auto;min-height:360px;grid-template-columns:none;grid-auto-flow:initial;grid-auto-columns:auto;padding:.15rem .15rem 1.5rem}
+.experience-timeline::before{top:50%}
+.experience-node{display:grid;flex:1 0 calc((100% - 3rem)/4);height:350px;min-width:220px;width:auto;grid-template-rows:1fr 30px 1fr}
+.experience-node .timeline-marker{position:static;top:auto;left:auto;margin:0;transform:none;grid-row:2;justify-self:center}
+@media(max-width:760px){
+  .experience-timeline{display:flex;height:auto;min-height:350px;grid-template-columns:none;grid-auto-flow:initial;grid-auto-columns:auto;padding:.15rem .15rem 1rem}
+  .experience-timeline::before{top:50%}
+  .experience-node{height:340px;flex-basis:76vw;min-width:245px}
+  .experience-node .timeline-marker{position:static;top:auto;left:auto;transform:none}
+}
+
+/* The two education markers sit one step high in the v12 layout. */
+.experience-node:nth-child(odd) .timeline-marker{position:relative;top:21px}
+.experience-node:nth-child(odd)>time{position:relative;top:30px}
+.experience-node:nth-child(odd) .experience-node-card{position:relative;top:20px}
